@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { v4 as uuidv4 } from "uuid";
 
 const AddTaskModal = ({ modalRef, refetch }) => {
   const {
@@ -11,8 +12,10 @@ const AddTaskModal = ({ modalRef, refetch }) => {
 
   //  Submit the form
   const onSubmit = async (data) => {
+    //  Add id and default status to the data
+    const id = uuidv4();
     const status = "incomplete";
-    data = { ...data, status };
+    data = { ...data, status, id };
 
     //   Get data to the local storage
     const tasks = JSON.parse(localStorage.getItem("tasks"));
