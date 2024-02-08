@@ -38,7 +38,7 @@ const App = () => {
         <div className="flex justify-between items-center">
           {/* Total Tasks */}
           <div>
-            <p>Total Tasks: {tasks?.length}</p>
+            <p>Total Tasks: {tasks?.length || 0}</p>
           </div>
           <div>
             <select onChange={(e) => setPriority(e.target.value)}>
@@ -60,7 +60,7 @@ const App = () => {
             <div className="flex sticky top-0  justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Incomplete</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {incompleteTasks?.length}
+                {incompleteTasks?.length || 0}
               </p>
             </div>
             <div className="space-y-3">
@@ -73,7 +73,7 @@ const App = () => {
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>In Progress</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {processingTasks?.length}
+                {processingTasks?.length || 0}
               </p>
             </div>
             <div className="space-y-3">
@@ -86,7 +86,7 @@ const App = () => {
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Completed</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {completeTasks?.length}
+                {completeTasks?.length || 0}
               </p>
             </div>
             <div className="space-y-3">
