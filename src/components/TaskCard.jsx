@@ -16,7 +16,7 @@ const TaskCard = ({ task, refetch }) => {
 
   const handleStatus = (id) => {
     // update status in the local storage
-    const updatedTasks = tasks.map((task) => {
+    const updatedTasks = tasks?.map((task) => {
       if (task.id === id) {
         task.status = updatedStatus;
       }
@@ -32,7 +32,7 @@ const TaskCard = ({ task, refetch }) => {
 
   const handleDelete = async (id) => {
     // delete task from the local storage
-    const remainingTask = tasks.filter((task) => task.id !== id);
+    const remainingTask = tasks?.filter((task) => task.id !== id);
     // update the local storage
     localStorage.setItem("tasks", JSON.stringify(remainingTask));
     toast.success("Task Deleted");

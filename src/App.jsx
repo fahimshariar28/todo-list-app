@@ -60,11 +60,11 @@ const App = () => {
             <div className="flex sticky top-0  justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Incomplete</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {incompleteTasks.length}
+                {incompleteTasks?.length}
               </p>
             </div>
             <div className="space-y-3">
-              {incompleteTasks.map((item) => (
+              {incompleteTasks?.map((item) => (
                 <TaskCard key={item.id} refetch={refetch} task={item} />
               ))}
             </div>
@@ -73,11 +73,11 @@ const App = () => {
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>In Progress</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {processingTasks.length}
+                {processingTasks?.length}
               </p>
             </div>
             <div className="space-y-3">
-              {processingTasks.map((item) => (
+              {processingTasks?.map((item) => (
                 <TaskCard key={item.id} refetch={refetch} task={item} />
               ))}
             </div>
@@ -86,11 +86,11 @@ const App = () => {
             <div className="flex sticky top-0 justify-between bg-[#D3DDF9] p-5 rounded-md mb-3">
               <h1>Completed</h1>
               <p className="bg-primary text-white w-6 h-6 grid place-content-center rounded-md">
-                {completeTasks.length}
+                {completeTasks?.length}
               </p>
             </div>
             <div className="space-y-3">
-              {completeTasks.map((item) => (
+              {completeTasks?.map((item) => (
                 <TaskCard key={item.id} refetch={refetch} task={item} />
               ))}
             </div>

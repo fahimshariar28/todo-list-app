@@ -6,17 +6,17 @@ const getTasks = (priority, setTasks) => {
     setTasks(tasks);
   }
   if (priority === "low") {
-    const lowPriorityTasks = tasks.filter((task) => task.priority === "low");
+    const lowPriorityTasks = tasks?.filter((task) => task.priority === "low");
     setTasks(lowPriorityTasks);
   }
   if (priority === "medium") {
-    const mediumPriorityTasks = tasks.filter(
+    const mediumPriorityTasks = tasks?.filter(
       (task) => task.priority === "medium"
     );
     setTasks(mediumPriorityTasks);
   }
   if (priority === "high") {
-    const highPriorityTasks = tasks.filter((task) => task.priority === "high");
+    const highPriorityTasks = tasks?.filter((task) => task.priority === "high");
     setTasks(highPriorityTasks);
   }
 };

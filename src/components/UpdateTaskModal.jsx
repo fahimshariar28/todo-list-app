@@ -15,7 +15,7 @@ const UpdateTaskModal = ({ modalRef, refetch, task }) => {
     const tasks = JSON.parse(localStorage.getItem("tasks"));
 
     //   Update the task
-    const updatedTasks = tasks.map((t) => {
+    const updatedTasks = tasks?.map((t) => {
       if (t.id === task.id) {
         t = { ...t, ...data };
       }
